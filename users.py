@@ -35,9 +35,17 @@ class User(object):
     def first_name(self):
         return self._first_name
 
+    @first_name.setter
+    def first_name(self, value):
+        self._first_name = value.title()
+
     @property
     def family_name(self):
         return self._family_name
+
+    @family_name.setter
+    def family_name(self, value):
+        self._family_name = value.title()
 
     @property
     def birth(self):
@@ -61,20 +69,26 @@ class Role(object):
         else:
             raise ValueError('The "{}" is an invalid role!'.format(role))
 
+    def valid_role(self):
+        return self._role
+
 
 class RoleManager(object):
     """Manage the user roles which are stored in a text file."""
 
-    def __init__(self):
-        pass
+    def __init__(self, role_location):
+        self._role_location = role_location
 
-    def read_roles(self, path):
+    def read_roles(self):
         """Read roles from the file."""
-        pass
+        with open(os.path.join(self._role_location, "roles.txt")) as role_file:
+            roles = role_file.read()
+        return roles
 
-    def write_roles(self):
+    def write_roles(self, user_id, role):
         """Write roles to the file."""
-        pass
+        with open(os.path.join(self._role_location, "roles.txt"), "a") as role_file:
+            role_file.write("{}: {}\n".format(user_id, Role(role).valid_role()))
 
 
 class UserManager(object):
