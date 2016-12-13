@@ -17,7 +17,7 @@ The fields of a user object stored in the text file line-by-line as:
 """
 
 import os
-
+import re
 import storage_utils
 
 
@@ -89,6 +89,15 @@ class RoleManager(object):
         """Write roles to the file."""
         with open(os.path.join(self._role_location, "roles.txt"), "a") as role_file:
             role_file.write("{}: {}\n".format(user_id, Role(role).valid_role()))
+
+    def check_format(self):
+        """Check if the roles.txt file has a correct format"""
+        pattern = re.compile(".+[^ ]: .+")
+        with open(os.path.join(self._role_location, "roles.txt")) as role_file:
+            for line in role_file:
+                if pattern.match(line) is None:
+                    return False
+        return True
 
 
 class UserManager(object):

@@ -48,11 +48,17 @@ class Document(object):
 
     @state.setter
     def state(self, value):
+        """Validating state changes, restricts to correct order."""
+
         if value in ['new', 'pending', 'accepted', 'rejected']:
-            self._state = value
+            if self._state == "new" and value == "pending":
+                self._state = value
+
+            if self._state == "pending" and value in ['accepted', 'rejected']:
+                self._state = value
         else:
             raise ValueError('The "{}" is an invalid document state!'.format(value))
-    
+
     @property
     def doc_format(self):
         return self._doc_format
