@@ -85,16 +85,16 @@ class UserManager(object):
 
     def save_user(self, user_id, user):
         """Save user to file"""
-        with open('{}/{}'.format(self._storage_location, user_id), 'w') as user_file:
+        with open('{}/users/{}'.format(self._storage_location, user_id), 'w') as user_file:
             user_file.write(user.first_name + '\n')
-            user_file.write(user.last_name + '\n')
+            user_file.write(user.family_name + '\n')
             user_file.write(str(user.birth) + '\n')
             user_file.write(user.email + '\n')
             user_file.write(user.password + '\n')
 
     def load_user(self, user_id):
         """Load user from file"""
-        with open('{}/{}'.format(self._storage_location, user_id)) as user_file:
+        with open('{}/users/{}'.format(self._storage_location, user_id)) as user_file:
             first_name = user_file.readline().rstrip('\n')
             family_name = user_file.readline().rstrip('\n')
             birth = user_file.readline().rstrip('\n')
@@ -112,14 +112,14 @@ class UserManager(object):
         self.save_user(user_id, user)
 
     def remove_user(self, user_id):
-        user_file_path = '{}/{}'.format(self._storage_location, user_id)
+        user_file_path = '{}/users/{}'.format(self._storage_location, user_id)
         if os.path.exists(user_file_path):
             os.remove(user_file_path)
         else:
             raise ValueError('The user id {} does not exist!'.format(user_id))
 
     def find_user_by_id(self, user_id):
-        user_file_path = '{}/{}'.format(self._storage_location, user_id)
+        user_file_path = '{}/users/{}'.format(self._storage_location, user_id)
         if os.path.exists(user_file_path):
             user = self.load_user(user_id)
             return user

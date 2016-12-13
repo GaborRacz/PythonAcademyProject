@@ -48,7 +48,7 @@ class Repository(object):
         for dir_name in ['documents', 'logs', 'projects', 'users']:
             os.makedirs('{}/{}'.format(self._location, dir_name))
         role_file_path = '{}/roles.txt'.format(self._location)
-        with open(role_file_path, 'w') as role_file:
+        with open(role_file_path, 'w'):
             os.utime(role_file_path, None)
         self.create_default_path_file()
         self._creation_date = datetime.now()
