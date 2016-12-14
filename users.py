@@ -18,6 +18,7 @@ The fields of a user object stored in the text file line-by-line as:
 
 import os
 import re
+import datetime
 import storage_utils
 
 
@@ -51,14 +52,32 @@ class User(object):
     def birth(self):
         return self._birth
 
+    @birth.setter
+    def birth(self, year, month, day):
+        self._birth = datetime.date(year, month, day)
+
     @property
     def email(self):
         return self._email
+
+    @email.setter
+    def email(self, value):
+        match = re.match('^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$', value)
+        if match is None:
+            raise ValueError("Invalid email format!")
+        else:
+            self.email = value
 
     @property
     def password(self):
         return self._password
 
+    @password.setter
+    def password(self, value):
+        if len(value) < 4:
+            raise ValueError("The password should be at least 4 characters long.")
+        else:
+            self._password = value
 
 class Role(object):
     """Represents the roles of the users"""
