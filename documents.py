@@ -60,6 +60,12 @@ class Document(object):
 
     @state.setter
     def state(self, value):
+        if value in ['new', 'pending', 'accepted', 'rejected']:
+            self._state = value
+        else:
+            raise ValueError('The "{}" is an invalid document state!'.format(value))
+
+    def change_state(self, value):
         """Validating state changes, restricts to correct order."""
 
         if value in ['new', 'pending', 'accepted', 'rejected']:
@@ -69,7 +75,7 @@ class Document(object):
             if self._state == "pending" and value in ['accepted', 'rejected']:
                 self._state = value
         else:
-            raise ValueError('The "{}" is an invalid document state!'.format(value))
+            raise ValueError('The "{}" state is not reachable from the current one.')
 
     @property
     def doc_format(self):
