@@ -110,14 +110,13 @@ class RoleManager(object):
         with open(os.path.join(self._role_location, "roles.txt"), "a") as role_file:
             role_file.write("{}: {}\n".format(user_id, Role(role).valid_role()))
 
-    def check_format(self):
+    def check_role_file(self):
         """Check if the roles.txt file has a correct format"""
         pattern = re.compile(".+[^ ]: .+")
         with open(os.path.join(self._role_location, "roles.txt")) as role_file:
             for line in role_file:
                 if pattern.match(line) is None:
-                    return False
-        return True
+                    raise ValueError("The roles.txt file's format is invalid.")
 
 
 class UserManager(object):
