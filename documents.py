@@ -98,7 +98,7 @@ class DocumentManager(object):
     def add_document(self, document):
         with open(os.path.join(self._document_location, document.spaceless_title), 'w') as doc_file:
             doc_file.write(document.title + '\n')
-            doc_file.write(document.description +'\n')
+            doc_file.write(document.description + '\n')
             doc_file.write(document.author + '\n')
             doc_file.write(document.files + '\n')
             doc_file.write(document.state + '\n')
@@ -116,10 +116,11 @@ class DocumentManager(object):
             raise ValueError('The document {} does not exist!'.format(document.spaceless_title))
 
     def list_documents(self):
-        return [f for f in os.listdir(self._document_location) if os.path.isfile(os.path.join(self._document_location, f))]
+        return [f for f in os.listdir(self._document_location)
+                if os.path.isfile(os.path.join(self._document_location, f))]
 
     def load_document(self, title):
-        with open(os.path.join(self._document_location, spaceless_title)) as doc_file:
+        with open(os.path.join(self._document_location, title)) as doc_file:
             title = doc_file.readline().strip()
             author = doc_file.readline().strip()
             files = doc_file.readline().strip()
@@ -127,10 +128,8 @@ class DocumentManager(object):
             state = doc_file.readline().strip()
             is_public = doc_file.readline().strip()
         doc = Document(title, author, files, doc_format, state)
-
         if is_public == "True":
             doc.make_public()
-
         return doc
 
     def find_document_by_title(self, title):
