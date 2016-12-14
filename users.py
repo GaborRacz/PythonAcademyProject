@@ -53,8 +53,8 @@ class User(object):
         return self._birth
 
     @birth.setter
-    def birth(self, year, month, day):
-        self._birth = datetime.date(year, month, day)
+    def birth(self, value):
+        self._birth = datetime.date(value[0], value[1], value[2])
 
     @property
     def email(self):
@@ -78,6 +78,7 @@ class User(object):
             raise ValueError("The password should be at least 4 characters long.")
         else:
             self._password = value
+
 
 class Role(object):
     """Represents the roles of the users"""
