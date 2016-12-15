@@ -1,4 +1,5 @@
 import os
+import storage_utils
 
 
 class Document(object):
@@ -101,8 +102,8 @@ class DocumentManager(object):
     def __init__(self, document_location):
         self._document_location = document_location
 
-    def add_document(self, document):
-        with open(os.path.join(self._document_location, document.spaceless_title), 'w') as doc_file:
+    def save_document(self, document_id, document):
+        with open(os.path.join(self._document_location, document_id), 'w') as doc_file:
             doc_file.write(document.title + '\n')
             doc_file.write(document.description + '\n')
             doc_file.write(document.author + '\n')
@@ -110,23 +111,27 @@ class DocumentManager(object):
             doc_file.write(document.state + '\n')
             doc_file.write(document.is_public() + '\n')
 
-    def update_document(self, document):
-        self.remove_document(document)
-        self.add_document(document)
+    def add_document(self, document):
+        document_id = storage_utils.get_next_id(self._document_location)
+        self.save_document(document_id, document)
 
-    def remove_document(self, document):
-        doc_file_path = os.path.join(self._document_location, document.spaceless_title)
+    def update_document(self, document_id, document):
+        self.remove_document(document_id)
+        self.save_document(document_id, document)
+
+    def remove_document(self, document_id):
+        doc_file_path = os.path.join(self._document_location, document_id)
         if os.path.exists(doc_file_path):
             os.remove(doc_file_path)
         else:
-            raise ValueError('The document {} does not exist!'.format(document.spaceless_title))
+            raise ValueError('The document {} does not exist!'.format(document_id))
 
     def list_documents(self):
         return [f for f in os.listdir(self._document_location)
                 if os.path.isfile(os.path.join(self._document_location, f))]
 
-    def load_document(self, title):
-        with open(os.path.join(self._document_location, title)) as doc_file:
+    def load_document(self, document_id):
+        with open(os.path.join(self._document_location, document_id)) as doc_file:
             title = doc_file.readline().strip()
             author = doc_file.readline().strip()
             files = doc_file.readline().strip()
@@ -138,14 +143,13 @@ class DocumentManager(object):
             doc.make_public()
         return doc
 
-    def find_document_by_title(self, title):
-        spaceless_title = title.replace(" ", "")
-        doc_file_path = os.path.join(self._document_location, spaceless_title)
+    def find_document_by_title(self, document_id):
+        doc_file_path = os.path.join(self._document_location, document_id)
         if os.path.exists(doc_file_path):
-            doc = self.load_document(spaceless_title)
+            doc = self.load_document(document_id)
             return doc
         else:
-            raise ValueError('The document {} does not exist!'.format(spaceless_title))
+            raise ValueError('The document {} does not exist!'.format(document_id))
 
     def find_document_by_author(self):
         pass
