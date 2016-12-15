@@ -13,5 +13,8 @@ def get_next_id(storage_path):
             integer_ids.append(current_id)
         except:
             pass
-    last_id = max(integer_ids)
+    try:
+        last_id = max(integer_ids)
+    except ValueError:
+        last_id = 0
     return last_id + 1
