@@ -1,6 +1,7 @@
 import random
 import string
 import datetime
+from users import User
 
 first_names = [
 "James", "John", "Robert", "Michael", "William", "David", "Richard", "Joseph", "Thomas",
@@ -74,8 +75,17 @@ class UserGenerator(object):
             email = email + str(random.randint(1, 1000))
         if email == '':
             email = ''.join(random.sample(string.ascii_lowercase, random.randint(4, 10)))
-        email += '.' + random.choice(email_domains)
+        email += '@' + random.choice(email_domains)
         return email
 
     def generate_password(self):
         return random.sample(string.ascii_letters, random.randint(6, 12))
+
+    def generate_user(self):
+        first_name = self.generate_first_name()
+        family_name = self.generate_family_name()
+        birth = self.generate_birth_date()
+        email = self.generate_email(first_name, family_name)
+        password = self.generate_password()
+
+        return User(first_name, family_name, birth, email, password)
