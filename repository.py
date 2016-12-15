@@ -20,6 +20,7 @@ The roles.txt contains the user names and the list of assigned roles.
 
 from datetime import datetime
 import os
+import shutil
 
 from users import UserManager
 from documents import DocumentManager
@@ -68,8 +69,15 @@ class Repository(object):
         }
         write_ini_file('{}/paths.ini'.format(self._location), data)
 
-    def import_documents(self):
-        pass
+    def import_documents(self, path):
+        if self._user_manager.count_users() < 1:
+            raise ValueError("Can't import without users")
 
-    def export_documents(self):
-        pass
+        for document_id in os.listdir(path):
+            shutil.copy(os.path.join(path, document_id), os.path.join(self._document_manager._document_location, "documents"))
+
+    def export_documents(self, document_ids, target):
+        for id in document_ids:
+            for document in os.listdir(self._document_manager._document_location):
+                if id == document:
+                    shutil.copy(os.path.join(self._document_manager._document_location, "documents", id), target)
