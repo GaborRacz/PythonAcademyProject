@@ -151,8 +151,5 @@ class DocumentManager(object):
         else:
             raise ValueError('The document {} does not exist!'.format(document_id))
 
-    def find_document_by_author(self):
-        pass
-
-    def find_document_by_format(self):
-        pass
+    def count_documents(self):
+        return len(os.listdir(os.path.join(self._document_location, "documents")))

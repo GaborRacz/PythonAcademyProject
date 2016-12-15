@@ -168,11 +168,5 @@ class UserManager(object):
         else:
             raise ValueError('The user id {} does not exist!'.format(user_id))
 
-    def find_users_by_name(self, name):
-        pass
-
-    def find_users_by_email(self, email):
-        pass
-
-    def find_users_by_role(self, role):
-        pass
+    def count_users(self):
+        return len(os.listdir(os.path.join(self._storage_location, "users")))

@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28e1c118-d950-40c2-93e3-9fef52d51522" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/documents.py" afterPath="$PROJECT_DIR$/documents.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/test_document2.py" afterPath="$PROJECT_DIR$/tests/test_document2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users.py" afterPath="$PROJECT_DIR$/users.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,11 +18,35 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="documents.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="repository.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/repository.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="521">
+              <caret line="70" column="29" lean-forward="false" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
+              <folding>
+                <element signature="e#755#784#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_import_export.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/test_import_export.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="521">
+              <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="documents.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/documents.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="73" column="35" lean-forward="true" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="35" />
+            <state relative-caret-position="631">
+              <caret line="155" column="0" lean-forward="true" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -31,12 +54,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_document2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/test_document2.py">
+      <file leaf-file-name="users.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/users.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="53" column="23" lean-forward="false" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
-              <folding />
+            <state relative-caret-position="631">
+              <caret line="171" column="8" lean-forward="false" selection-start-line="171" selection-start-column="8" selection-end-line="171" selection-end-column="77" />
+              <folding>
+                <element signature="e#394#403#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -54,18 +79,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/users.py" />
         <option value="$PROJECT_DIR$/tests/test_document_manager2.py" />
         <option value="$PROJECT_DIR$/tests/test_document.py" />
         <option value="$PROJECT_DIR$/usergen/generator.py" />
         <option value="$PROJECT_DIR$/tests/test_user.py" />
         <option value="$PROJECT_DIR$/iniformat/writer.py" />
         <option value="$PROJECT_DIR$/iniformat/reader.py" />
-        <option value="$PROJECT_DIR$/tests/test_import_export.py" />
         <option value="$PROJECT_DIR$/docgen/generator.py" />
-        <option value="$PROJECT_DIR$/repository.py" />
         <option value="$PROJECT_DIR$/tests/test_document2.py" />
+        <option value="$PROJECT_DIR$/tests/test_import_export.py" />
+        <option value="$PROJECT_DIR$/users.py" />
         <option value="$PROJECT_DIR$/documents.py" />
+        <option value="$PROJECT_DIR$/repository.py" />
       </list>
     </option>
   </component>
@@ -103,34 +128,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PythonAcademyProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PythonAcademyProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PythonAcademyProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PythonAcademyProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="docgen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -139,7 +136,7 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Python tests.Nosetest TestDocument.test_invalid_new_state">
+  <component name="RunManager" selected="Python tests.Nosetest TestImportExport.test_import_without_users">
     <configuration default="false" name="Nosetests in test_document2" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -155,27 +152,6 @@
       <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Nosetest TestDocument.test_invalid_accept (1)" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="PythonAcademyProject" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/test_document2.py" />
-      <option name="CLASS_NAME" value="TestDocument" />
-      <option name="METHOD_NAME" value="test_invalid_accept" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <option name="PARAMS" value="" />
@@ -237,6 +213,27 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/test_document2.py" />
       <option name="CLASS_NAME" value="TestDocument" />
       <option name="METHOD_NAME" value="test_accept_document" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Nosetest TestImportExport.test_import_without_users" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="PythonAcademyProject" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/test_import_export.py" />
+      <option name="CLASS_NAME" value="TestImportExport" />
+      <option name="METHOD_NAME" value="test_import_without_users" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -381,18 +378,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python tests.Nosetests in test_document2" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Nosetest TestDocument.test_invalid_accept (1)" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Nosetest TestDocument.test_invalid_new_state" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Nosetests in test_document" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Nosetest TestDocument.test_accept_document" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Nosetest TestDocument.test_invalid_new_state" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Nosetests in test_document" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Nosetest TestDocument.test_accept_document" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Nosetest TestImportExport.test_import_without_users" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Nosetest TestDocument.test_invalid_new_state" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Nosetests in test_document2" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Nosetest TestDocument.test_accept_document" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Nosetests in test_document" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Nosetest TestDocument.test_invalid_accept (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Nosetest TestImportExport.test_import_without_users" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Nosetest TestDocument.test_invalid_new_state" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Nosetests in test_document2" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Nosetest TestDocument.test_accept_document" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Nosetests in test_document" />
       </list>
     </recent_temporary>
   </component>
@@ -413,9 +410,6 @@
     <history-entry file="Nosetest_TestDocument_test_accept_document - 2016.12.15 at 11h 45m 10s.xml">
       <configuration name="Nosetest TestDocument.test_accept_document" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetest_TestDocument_test_invalid_accept_(1) - 2016.12.15 at 11h 39m 20s.xml">
-      <configuration name="Nosetest TestDocument.test_invalid_accept (1)" configurationId="tests" />
-    </history-entry>
     <history-entry file="Nosetest_TestDocument_test_invalid_new_state - 2016.12.15 at 11h 43m 05s.xml">
       <configuration name="Nosetest TestDocument.test_invalid_new_state" configurationId="tests" />
     </history-entry>
@@ -427,6 +421,9 @@
     </history-entry>
     <history-entry file="Nosetest_TestDocument_test_invalid_new_state - 2016.12.15 at 11h 46m 57s.xml">
       <configuration name="Nosetest TestDocument.test_invalid_new_state" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetest_TestImportExport_test_import_without_users - 2016.12.15 at 11h 51m 22s.xml">
+      <configuration name="Nosetest TestImportExport.test_import_without_users" configurationId="tests" />
     </history-entry>
     <history-entry file="Nosetests_in_test_document - 2016.12.15 at 11h 43m 54s.xml">
       <configuration name="Nosetests in test_document" configurationId="tests" />
@@ -460,7 +457,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32998747" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.57340026" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.49811795" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29611042" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27603513" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -504,7 +501,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#394#403#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -610,36 +609,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/users.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1958">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/repository.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="62" column="41" lean-forward="true" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
-          <folding>
-            <element signature="e#755#784#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storage_utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_import_export.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-88">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -670,12 +643,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_import_export.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/repository.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="70" column="29" lean-forward="false" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
+          <folding>
+            <element signature="e#755#784#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/documents.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="73" column="35" lean-forward="true" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="35" />
+        <state relative-caret-position="631">
+          <caret line="155" column="0" lean-forward="true" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="631">
+          <caret line="171" column="8" lean-forward="false" selection-start-line="171" selection-start-column="8" selection-end-line="171" selection-end-column="77" />
+          <folding>
+            <element signature="e#394#403#0" expanded="true" />
           </folding>
         </state>
       </provider>
