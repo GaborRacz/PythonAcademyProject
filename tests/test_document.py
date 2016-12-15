@@ -1,5 +1,6 @@
 import unittest
 
+from docgen import generator
 from documents import Document
 
 
@@ -24,3 +25,21 @@ class TestDocument(unittest.TestCase):
         self.assertTrue(document.is_public())
         document.make_private()
         self.assertFalse(document.is_public())
+
+    def test_generator_general(self):
+        for extension in generator.extensions['general']:
+            for name in generator.filename_parts['general']:
+                document = Document('title1', 'desc1', 'author1', name + extension, extension)
+                self.assertTrue(document.doc_format in generator.extensions['general'])
+
+    def test_generator_office(self):
+        for extension in generator.extensions['office']:
+            for name in generator.filename_parts['office']:
+                document = Document('title1', 'desc1', 'author1', name + extension, extension)
+                self.assertTrue(document.doc_format in generator.extensions['office'])
+
+    def test_generator_image(self):
+        for extension in generator.extensions['image']:
+            for name in generator.filename_parts['image']:
+                document = Document('title1', 'desc1', 'author1', name + extension, extension)
+                self.assertTrue(document.doc_format in generator.extensions['image'])
