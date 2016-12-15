@@ -76,7 +76,7 @@ class Document(object):
             if self._state == "pending" and value in ['accepted', 'rejected']:
                 self._state = value
         else:
-            raise ValueError('The "{}" state is not reachable from the current one.')
+            raise ValueError('The "{}" is an invalid document state!'.format(value))
 
     @property
     def doc_format(self):

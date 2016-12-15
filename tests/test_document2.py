@@ -44,18 +44,18 @@ class TestDocument(unittest.TestCase):
     def test_invalid_accept(self):
         document = Document('title1', 'desc1', 1, ['1.pdf', '2.pdf'], 'pdf')
         with self.assertRaises(ValueError):
-            document.change_state('accepted')
+            document.change_state('accept')
 
     def test_invalid_reject(self):
         document = Document('title1', 'desc1', 1, ['1.pdf', '2.pdf'], 'pdf')
         with self.assertRaises(ValueError):
-            document.change_state('rejected')
+            document.change_state('reject')
 
     def test_invalid_new_state(self):
         document = Document('title1', 'desc1', 1, ['1.pdf', '2.pdf'], 'pdf')
         document.change_state('pending')
-        with self.assertRaises(ValueError):
-            document.change_state('new')
+        document.change_state('new')
+        self.assertEquals(document.state, 'pending')
 
     def test_public_visibility(self):
         document = Document('title1', 'desc1', 1, ['1.pdf', '2.pdf'], 'pdf')
