@@ -21,6 +21,8 @@ The roles.txt contains the user names and the list of assigned roles.
 from datetime import datetime
 import os
 
+from users import UserManager
+from documents import DocumentManager
 from iniformat.writer import write_ini_file
 
 
@@ -31,6 +33,8 @@ class Repository(object):
         self._name = name
         self._location = location
         self.load()
+        self._user_manager = UserManager(location)
+        self._document_manager = DocumentManager(location)
 
     def load(self):
         """Try to load an existing repository"""
@@ -63,3 +67,9 @@ class Repository(object):
             }
         }
         write_ini_file('{}/paths.ini'.format(self._location), data)
+
+    def import_documents(self):
+        pass
+
+    def export_documents(self):
+        pass
