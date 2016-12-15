@@ -44,5 +44,31 @@ class Review(object):
             raise ValueError(message)
 
 class ReviewManager(object):
-    def __init__(self, review_location):
+    def __init__(self, review_location, user_manager, document_manager):
         self.review_location = review_location
+        self.user_manager = user_manager
+        self.document_manager = document_manager
+
+    def select_document(self):
+        pass
+
+    def submit_document(self):
+        pass
+
+    #def save_review(self):
+        #pass
+
+    def send_reviewing_request_1(self):
+        pass
+
+    def send_reviewing_request_2(self):
+        pass
+
+    def send_review_1(self):
+        pass
+
+    def send_review_2(self):
+        pass
+
+    def send_evaluation(self):
+        pass
