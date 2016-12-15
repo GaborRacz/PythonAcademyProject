@@ -4,8 +4,9 @@
 # - The ini file can contains sections and properties.
 # - The section and property names are arbitrary without restrictions.
 # - The section denoted by leading [ and trailing ] as the first non-whitespace characters.
-# - The duplicated section or property definition causes error.
 #
+
+
 def read_ini_file(path):
     content = {}
     section_name = ''
