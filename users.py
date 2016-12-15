@@ -127,7 +127,7 @@ class UserManager(object):
 
     def save_user(self, user_id, user):
         """Save user to file"""
-        with open(os.path.join(self._storage_location, "users", user_id), 'w') as user_file:
+        with open(os.path.join(self._storage_location, "users", str(user_id)), 'w') as user_file:
             user_file.write(user.first_name + '\n')
             user_file.write(user.family_name + '\n')
             user_file.write(str(user.birth) + '\n')
@@ -146,7 +146,7 @@ class UserManager(object):
         return user
 
     def add_user(self, user):
-        user_id = storage_utils.get_next_id(self._storage_location)
+        user_id = storage_utils.get_next_id(os.path.join(self._storage_location, "users"))
         self.save_user(user_id, user)
 
     def update_user(self, user_id, user):
