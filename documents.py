@@ -103,16 +103,16 @@ class DocumentManager(object):
         self._document_location = document_location
 
     def save_document(self, document_id, document):
-        with open(os.path.join(self._document_location, "documents", document_id), 'w') as doc_file:
+        with open(os.path.join(self._document_location, "documents", str(document_id)), 'w') as doc_file:
             doc_file.write(document.title + '\n')
             doc_file.write(document.description + '\n')
             doc_file.write(document.author + '\n')
             doc_file.write(document.files + '\n')
             doc_file.write(document.state + '\n')
-            doc_file.write(document.is_public() + '\n')
+            doc_file.write(str(document.is_public()) + '\n')
 
     def add_document(self, document):
-        document_id = storage_utils.get_next_id(self._document_location)
+        document_id = storage_utils.get_next_id(os.path.join(self._document_location, "documents"))
         self.save_document(document_id, document)
 
     def update_document(self, document_id, document):
