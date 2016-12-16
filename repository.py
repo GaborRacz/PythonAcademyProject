@@ -18,10 +18,12 @@ The paths.ini file contains the (relative or absolute) paths of mentioned subdir
 The roles.txt contains the user names and the list of assigned roles.
 """
 
-from datetime import datetime
 import os
 import shutil
+from datetime import datetime
 
+
+import reports
 from users import UserManager
 from documents import DocumentManager
 from iniformat.writer import write_ini_file
@@ -96,3 +98,6 @@ class Repository(object):
         print("The backup was taken at {} .".format(self.backup_creation_date))
         print("There were {} users in the repository.".format(self.users))
         print("There were {} documents in the repository.".format(self.documents))
+
+    def create_report(self):
+        return reports.Report()
