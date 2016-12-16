@@ -98,17 +98,47 @@ class RoleManager(object):
 
     def __init__(self, role_location):
         self._role_location = role_location
+        self.roles = {}
 
     def read_roles(self):
-        """Read roles from the file."""
+        stored_roles = {}
         with open(os.path.join(self._role_location, "roles.txt")) as role_file:
-            roles = role_file.read()
-        return roles
+            for line in role_file:
+                (key, values) = line.strip().split(":")
+                for value in values.strip().split(","):
+                    if key in stored_roles:
+                        stored_roles[key].append(value)
+                    else:
+                        stored_roles[key] = [value]
+        return stored_roles
 
-    def write_roles(self, user_id, role):
+    def add_role(self, user_id, role):
+        split_roles = role.split(",")
+        for i in split_roles:
+            if user_id in self.roles:
+                if i not in self.roles[user_id]:
+                    self.roles[str(user_id)].append(i)
+                else:
+                    raise ValueError("Duplicate role.")
+            else:
+                self.roles[str(user_id)] = [i]
+
+    def remove_role(self, user_id, role):
+        self.roles = self.read_roles()
+        if user_id in self.roles:
+            if role in self.roles[user_id]:
+                self.roles[user_id].remove(role)
+                self.write_roles()
+            else:
+                raise ValueError("No {} role for {} user.".format(role, user_id))
+        else:
+            raise KeyError("No {} user in roles.txt".format(user_id))
+
+    def write_roles(self):
         """Write roles to the file."""
-        with open(os.path.join(self._role_location, "roles.txt"), "a") as role_file:
-            role_file.write("{}: {}\n".format(user_id, Role(role).valid_role()))
+        with open(os.path.join(self._role_location, "roles.txt"), "w") as role_file:
+            for user_id in self.roles:
+                role_file.write("{}: {}\n".format(user_id, ",".join(self.roles[user_id])))
 
     def check_role_file(self):
         """Check if the roles.txt file has a correct format"""
@@ -148,6 +178,7 @@ class UserManager(object):
     def add_user(self, user):
         user_id = storage_utils.get_next_id(os.path.join(self._storage_location, "users"))
         self.save_user(user_id, user)
+        return user_id
 
     def update_user(self, user_id, user):
         self.remove_user(user_id)
@@ -170,3 +201,9 @@ class UserManager(object):
 
     def count_users(self):
         return len(os.listdir(os.path.join(self._storage_location, "users")))
+
+    def add_role(self, user_id, role):
+        RoleManager(self._storage_location).add_role(user_id, role)
+
+    def remove_role(self, user_id, role):
+        RoleManager(self._storage_location).remove_role(user_id, role)
