@@ -8,7 +8,8 @@ class Report(object):
         self.document_count = document_count
         if user_count_by_roles is None:
             self.user_count_by_roles = {'admin': 0, 'manager': 0, 'author': 0, 'reviewer': 0, 'visitor': 0}
-        self.user_count_by_roles = user_count_by_roles
+        else:
+            self.user_count_by_roles = user_count_by_roles
         self.import_count = import_count
         self.export_count = export_count
 
