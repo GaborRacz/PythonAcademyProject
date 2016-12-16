@@ -4,7 +4,7 @@ from datetime import date
 
 from users import User
 
-SKIP_ADVANCED = False
+SKIP_ADVANCED = True
 
 
 class TestUser(unittest.TestCase):
