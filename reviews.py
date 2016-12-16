@@ -43,20 +43,24 @@ class Review(object):
         else:
             raise ValueError(message)
 
+
 class ReviewManager(object):
     def __init__(self, review_location, user_manager, document_manager):
         self.review_location = review_location
         self.user_manager = user_manager
         self.document_manager = document_manager
 
-    def select_document(self):
-        pass
+        self.submission_id = None
+        self.documents = []
 
-    def submit_document(self):
-        pass
+    def select_document(self, submission_id):
+        self.documents.append(submission_id)
 
-    #def save_review(self):
-        #pass
+    def submit_document(self, source, target, submission_id):
+        Review().set_submission()
+
+    def save_review(self):
+        pass
 
     def send_reviewing_request_1(self):
         pass
