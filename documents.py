@@ -131,9 +131,11 @@ class DocumentManager(object):
         """
         Creates the document's ID and calls save_document
         :param document: a Document type object
+        :return: ID of the document
         """
         document_id = storage_utils.get_next_id(self._document_location)
         self.save_document(document_id, document)
+        return document_id
 
     def update_document(self, document_id, document):
         """
