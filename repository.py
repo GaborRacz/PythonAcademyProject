@@ -81,3 +81,18 @@ class Repository(object):
             for document in os.listdir(self._document_manager._document_location):
                 if id == document:
                     shutil.copy(os.path.join(self._document_manager._document_location, "documents", id), target)
+
+    def create_backup(self, name, target="/backup"):
+        self.backup_creation_date = datetime.now()
+        self.users = self._user_manager.count_users()
+        self.documents = self._document_manager.count_documents()
+        shutil.copytree(self._location, os.path.join(target, name))
+
+    def restore_backup(self, name, source="/backup"):
+        shutil.rmtree(self._location)
+        shutil.copytree(os.path.join(source, name), self._location)
+
+    def show_backup_info(self):
+        print("The backup was taken at {} .".format(self.backup_creation_date))
+        print("There were {} users in the repository.".format(self.users))
+        print("There were {} documents in the repository.".format(self.documents))
