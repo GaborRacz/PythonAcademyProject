@@ -103,16 +103,16 @@ class DocumentManager(object):
         self._document_location = document_location
 
     def save_document(self, document_id, document):
-        with open(os.path.join(self._document_location, "documents", str(document_id)), 'w') as doc_file:
+        with open(os.path.join(self._document_location, str(document_id)), 'w') as doc_file:
             doc_file.write(document.title + '\n')
             doc_file.write(document.description + '\n')
-            doc_file.write(document.author + '\n')
-            doc_file.write(document.files + '\n')
+            doc_file.write(str(document.author) + '\n')
+            doc_file.write(str(document.files) + '\n')
             doc_file.write(document.state + '\n')
             doc_file.write(str(document.is_public()) + '\n')
 
     def add_document(self, document):
-        document_id = storage_utils.get_next_id(os.path.join(self._document_location, "documents"))
+        document_id = storage_utils.get_next_id(self._document_location)
         self.save_document(document_id, document)
 
     def update_document(self, document_id, document):
@@ -120,7 +120,7 @@ class DocumentManager(object):
         self.save_document(document_id, document)
 
     def remove_document(self, document_id):
-        doc_file_path = os.path.join(self._document_location, "documents", document_id)
+        doc_file_path = os.path.join(self._document_location, document_id)
         if os.path.exists(doc_file_path):
             os.remove(doc_file_path)
         else:
@@ -131,7 +131,7 @@ class DocumentManager(object):
                 if os.path.isfile(os.path.join(self._document_location, f))]
 
     def load_document(self, document_id):
-        with open(os.path.join(self._document_location, "documents", document_id)) as doc_file:
+        with open(os.path.join(self._document_location, document_id)) as doc_file:
             title = doc_file.readline().strip()
             author = doc_file.readline().strip()
             files = doc_file.readline().strip()
@@ -144,7 +144,7 @@ class DocumentManager(object):
         return doc
 
     def find_document_by_title(self, document_id):
-        doc_file_path = os.path.join(self._document_location, "documents", document_id)
+        doc_file_path = os.path.join(self._document_location, document_id)
         if os.path.exists(doc_file_path):
             doc = self.load_document(document_id)
             return doc
@@ -152,4 +152,4 @@ class DocumentManager(object):
             raise ValueError('The document {} does not exist!'.format(document_id))
 
     def count_documents(self):
-        return len(os.listdir(os.path.join(self._document_location, "documents")))
+        return len(os.listdir(self._document_location))
