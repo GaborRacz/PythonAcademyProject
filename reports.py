@@ -10,6 +10,10 @@ class Report(object):
         self.export_count = export_count
 
     def general_overview_report(self):
-        return "The Repository had {} users, {} documents; there have been {} imports and {} exports".format(
-            self.user_count, self.document_count, self.import_count, self.export_count
-        )
+        return "The Repository had {} users, {} documents; there have been {} imports and {} exports, " \
+               "and the user count by roles is: {}".format(
+                self.user_count, self.document_count, self.import_count, self.export_count, self.user_count_by_roles)
+
+    def csv_report(self):
+        return "{},{},{},{},{}".format(
+            self.user_count, self.document_count, self.user_count_by_roles, self.import_count, self.export_count)
