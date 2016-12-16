@@ -160,6 +160,7 @@ class DocumentManager(object):
     def list_documents(self):
         """
         Lists the documents in repository/documents folder
+        :return: list of Documents
         """
         return [f for f in os.listdir(self._document_location)
                 if os.path.isfile(os.path.join(self._document_location, f))]
