@@ -9,7 +9,6 @@ class Document(object):
 
     def __init__(self, title, description, author, files, doc_format):
         self._title = title
-        self._spaceless_title = title.replace(" ", "")
         self._description = description
         self._author = author
         self._files = files
@@ -24,14 +23,6 @@ class Document(object):
     @title.setter
     def title(self, value):
         self._title = value
-
-    @property
-    def spaceless_title(self):
-        return self._spaceless_title
-
-    @spaceless_title.setter
-    def spaceless_title(self, value):
-        raise ValueError("You can't set the spaceless title.")
 
     @property
     def description(self):
